@@ -15,7 +15,7 @@ class UserController extends Controller
         return view('user.create');
     }
 
-    // Store a new user
+    //e a new user
     public function store(Request $request)
     {
         $formFields = $request->validate([

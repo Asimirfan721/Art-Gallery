@@ -28,7 +28,7 @@ class ListingController extends Controller
         return view('gallery.create');
     }
 
-    // Store the gallery form to the database
+    // Store gallery form to the database
     public function store(Request $request){
         $formFilds = $request->validate([
             'name'=>'required',
