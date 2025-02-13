@@ -17,26 +17,18 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/',[ListingController::class, 'index']);
-
 Route::post('/search', [ListingController::class, 'search']);
-
 Route::get('/create',[ListingController::class, 'create']);
+Route::post('/gallery', [ListingController::class, 'store']);
 
-Route::get('/gallery', [ListingController::class, 'store']);
-
+Route::delete('/gallery/{id}', [ListingController::class, 'destroy'])->name('gallery.destroy');
 Route::get('/gallery/{listing}/edit', [ListingController::class, 'edit']);
-
 Route::put('/gallery/{listing}', [ListingController::class, 'update']);
-
 Route::delete('/gallery/{listing}', [ListingController::class, 'destroy']);
 
 Route::get('/gallery/{listing}',[ListingController::class, 'show']);
-
 Route::get('/home', [HomeController::class, 'index']);
-
-
 Route::post('/users', [UserController::class, 'store']);
-
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'authenticate'])->name('login.authenticate');

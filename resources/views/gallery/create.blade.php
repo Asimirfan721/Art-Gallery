@@ -6,7 +6,9 @@
         <h2>Create Gallery Form</h2>
         <form action="/gallery" method="POST" enctype="multipart/form-data">
             @csrf
+            
             <div class="input-group">
+                
                 <label for="logo">Photo</label>
                 <input type="file" id="logo" name="logo" required>
                 @error('logo')
