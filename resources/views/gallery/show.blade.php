@@ -22,7 +22,7 @@
                     <p></p>
                     
                     <div class="button-container">
-                        
+                        <button onclick="location.href='/'" class="btn-home">Home</button>
                         <button onclick="location.href='/gallery/{{$listing->id}}/edit'" class="btn-update">Update</button>
                             <form action="/gallery/{{$listing->id}}" method="POST">
                                 @csrf
