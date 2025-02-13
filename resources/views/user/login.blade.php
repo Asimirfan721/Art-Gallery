@@ -108,6 +108,5 @@
         <p>Don't have an account? <a href="{{ route('register') }}">Register here</a></p>
     </div>
 </div>
-
 </body>
 </html>
