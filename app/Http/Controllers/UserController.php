@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $formFields = $request->validate([
             'name' => ['required', 'min:4'],
-            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'email' => ['required', 'email', Rule::unique('users', 'email')], // mail is created
             'password' => ['required', 'confirmed', 'min:6']
         ]);
 
