@@ -77,7 +77,7 @@ class ListingController extends Controller
     }
 
 
-    // Delete a gallery listing grom the database 
+    // Delete a gallery listing grom the database  is created 
     public function destroy(Listing $listing){
         if($listing){
             $listing->delete();
