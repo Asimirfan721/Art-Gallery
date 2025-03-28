@@ -12,7 +12,7 @@ class UserController extends Controller
     // Show the registration form is called here
     public function create()
     {
-        return view('user.create');  // here is the view for registration
+        return view('user.create');  // here is the view for registration called
     }
 
     //e a new user

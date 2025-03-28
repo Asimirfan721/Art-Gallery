@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-        return view('home'); // home.blade.php
-    }
+        return view('home'); // home.blade.php will be called here 
+    } 
      
 }
