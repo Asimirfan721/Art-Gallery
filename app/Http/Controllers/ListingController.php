@@ -19,7 +19,7 @@ class ListingController extends Controller
     // To display individual listings
     public function show(Listing $listing){
         if($listing){
-            return view('gallery.show', ['listing'=>$listing]);
+            return view('gallery.show', ['listing'=>$listing]); // view has still issue
         }else
             abort(404);
     }
