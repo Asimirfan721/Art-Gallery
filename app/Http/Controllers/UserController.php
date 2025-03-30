@@ -15,9 +15,7 @@ class UserController extends Controller
         // return view('user.create');  // here is the view for registration called
         return view('user.create');  // here is the view for registration called
     }
-    {
-        return view('user.create');  // here is the view for registration called
-    }
+    // Show the registration form
 
     //e a new user
     public function store(Request $request)
