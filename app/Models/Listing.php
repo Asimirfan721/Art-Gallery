@@ -16,7 +16,7 @@ class Listing extends Model
         }
         if($filters['search'] ?? false){
             $query->where('title', 'like','%'.request('search').'%')
-            ->orwhere('description', 'like','%'.request('search').'%') // factory
+            ->orwhere('description', 'like','%'.request('search').'%') // factory request has issue
             ->orwhere('tags', 'like','%'.request('search').'%');
         }
     }
