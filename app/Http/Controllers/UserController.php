@@ -10,7 +10,11 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     // Show the registration form is called here
-    public function create()
+    public function create()    //
+    {
+        // return view('user.create');  // here is the view for registration called
+        return view('user.create');  // here is the view for registration called
+    }
     {
         return view('user.create');  // here is the view for registration called
     }
