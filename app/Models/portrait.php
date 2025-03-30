@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class portrait extends Model
 {
-    use HasFactory; // factory
+    use HasFactory; // factory has to be used
+    protected $fillable = ['title','company','location','website','email','description','tags']; // fillable fields are defined here
 }
