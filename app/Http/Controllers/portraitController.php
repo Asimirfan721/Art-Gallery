@@ -13,6 +13,6 @@ class portraitController extends Controller
     
     public function about()
     {
-        return view('portrait.about'); // portrait.about will be called here 
+        return view('portrait.about'); // portrait.about will be called here issue
     }
 }

@@ -23,7 +23,7 @@ class ListingController extends Controller
         }else
             abort(404);
     }
-    // Display the gallery creation form 
+    // Display the gallery creation form   issue
     public function create(){
         return view('gallery.create');
     }
