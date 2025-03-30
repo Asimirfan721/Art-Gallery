@@ -10,7 +10,7 @@ class ListingController extends Controller
 {
     //To display all the gallery listings
     public function index(){
-        return view('gallery.index',
+        return view('gallery.index', // view has
         // ['listings'=>Listing::latest()->filter(request(['tag','search']))->paginate(6)
         ['listings'=>Listing::latest()->paginate(6)
     ]);
