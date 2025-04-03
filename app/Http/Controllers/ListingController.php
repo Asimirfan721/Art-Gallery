@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Validation\Rule;
-use App\Models\Listing;
+use App\Models\Listing; // models
 use Illuminate\Http\Request;
 
 class ListingController extends Controller
