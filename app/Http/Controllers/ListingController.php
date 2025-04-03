@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Validation\Rule;
 use App\Models\Listing; // models
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; // request is defined
 
 class ListingController extends Controller
 {
