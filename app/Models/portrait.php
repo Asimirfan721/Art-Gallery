@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class portrait extends Model  // Model name should be in singular form
+class portrait extends User  // Model name should be in singular form
 // and should be in PascalCase
 {
     use HasFactory; // factory has to be used
