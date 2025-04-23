@@ -10,4 +10,8 @@ class StockController extends Controller
     {
         return view('stock.index'); // stock.index will be called here 
     }
+    public function about()
+    {
+        return view('stock.about'); // stock.about will be called here 
+    }
 }
