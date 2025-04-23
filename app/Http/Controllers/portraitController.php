@@ -15,4 +15,8 @@ class portraitController extends Controller
     {
         return view('portrait.about'); // portrait.about will be called here issue
     }
+    public function contact()
+    {
+        return view('portrait.contact'); // portrait.contact will be called here 
+    }
 }
