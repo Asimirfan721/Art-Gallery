@@ -68,4 +68,9 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return redirect('/login')->with('message', 'You have been logged out.');
     }
+    // Show the profile page
+    public function profile()
+    {
+        return view('user.profile');
+    }
 }
