@@ -12,7 +12,7 @@ class HomeController extends Controller
     } 
     public function about() {
         return view('about'); // about.blade.php will be called here 
-    }
+    }    
     public function contact() {
         return view('contact'); // contact.blade.php will be called here 
     }
