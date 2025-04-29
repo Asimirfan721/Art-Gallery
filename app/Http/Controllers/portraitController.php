@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class portraitController extends Controller
 {
-    public function index()
+    public function index()     //  index function
     {
         return view('portrait.index'); // portrait.index will be called here 
     }
