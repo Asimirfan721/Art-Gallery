@@ -69,7 +69,7 @@ class UserController extends Controller
         return redirect('/login')->with('message', 'You have been logged out.'); // Redirect to login page with message
     }
     // Show the profile page
-    public function profile()
+    public function profile() //   profile
     {
         return view('user.profile');
     }
