@@ -65,8 +65,8 @@ class UserController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate(); // Invalidate the session
-        $request->session()->regenerateToken();
-        return redirect('/login')->with('message', 'You have been logged out.');
+        $request->session()->regenerateToken(); // Regenerate the CSRF token
+        return redirect('/login')->with('message', 'You have been logged out.'); // Redirect to login page with message
     }
     // Show the profile page
     public function profile()
