@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rule; // validation   
 use App\Models\Listing; // models
 use Illuminate\Http\Request; // request is defined
 
