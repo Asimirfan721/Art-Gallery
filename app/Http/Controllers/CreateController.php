@@ -8,6 +8,6 @@ class CreateController extends Controller
 {
     public function index ()
     {
-        return view('create'); // create.blade.php will be called here
+        return view('create');  
     }
 }
