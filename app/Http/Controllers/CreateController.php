@@ -8,7 +8,7 @@ class CreateController extends Controller
 {
  public function create()
  {
-     return view('create'); // create.blade.php will be called here
+     return view('create'); 
  }
  public function  index () {
     return view ('home.create');
