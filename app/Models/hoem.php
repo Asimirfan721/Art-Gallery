@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class hoem extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'image', 'pic' // Add other fields as necessary
+    ];
+    
 }
