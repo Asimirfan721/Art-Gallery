@@ -16,5 +16,9 @@ class HomeController extends Controller
     public function contact() {
         return view('contact'); // contact.blade.php will be called here 
     }
+    public function create() {
+        return View::make('home'); // home.blade.php will be called here      
+    } 
+
       
 }
