@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Validation\Rule; // validation   
 use App\Models\Listing; // models
 use Illuminate\Http\Request; // request is defined
-
+use App\Models\User; // User model for authentication
 class ListingController extends Controller
 {
     //To display all the gallery listings
