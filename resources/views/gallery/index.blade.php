@@ -6,7 +6,8 @@
 </x-header>
 
 <x-wrapper>
-@unless(count($listings)==0)
+@unless(count($listings ?? []) == 0)
+
 @foreach($listings as $list)
 <x-listing-card :list="$list">
 </x-listing-card>
