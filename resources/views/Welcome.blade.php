@@ -1,4 +1,5 @@
-{{-- filepath: c:\Users\H.T\Desktop\Coding\1 github\Art-Gallery\resources\views\welcome.blade.php --}}
+
+
 <!DOCTYPE html>
 <html>
 <head>
