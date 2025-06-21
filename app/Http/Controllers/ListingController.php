@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Validation\Rule; // validation   
+use Illuminate\Support\Facades\Auth;
 use App\Models\Listing; // models
 use Illuminate\Http\Request; // request is defined
 use App\Models\User; // User model for authentication
@@ -29,24 +30,29 @@ class ListingController extends Controller
     }
 
     // Store gallery form to the database
-    public function store(Request $request){
-        $formFilds = $request->validate([
-            'name'=>'required',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'location' => 'required',
-            'tags' => 'required',
-            'description' => 'required'
-        ]);
+    
 
-        if($request->hasFile('logo')){
-            $formFilds['logo'] = $request->file('logo')->store('pictures', 'public');
-        }
+public function store(Request $request)
+{
+    $formFields = $request->validate([
+        'name' => 'required',
+        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'location' => 'required',
+        'tags' => 'required',
+        'description' => 'required'
+    ]);
 
-        Listing::create($formFilds);
-
-        return redirect('/')->with('message', 'Listing created sucessfully!');
+    if ($request->hasFile('logo')) {
+        $formFields['logo'] = $request->file('logo')->store('pictures', 'public');
     }
 
+    // Attach logged-in user's ID
+    $formFields['user_id'] = auth()->id();
+
+    Listing::create($formFields);
+
+    return redirect('/')->with('message', 'Listing created successfully!');
+}
 
     // Show the listing from
     public function edit(Listing $listing){

@@ -54,6 +54,9 @@
                         <p><strong>{{ $listing->tags }}</strong></p>
                     </div>
                     <p>{{ $listing->description }}</p>
+                    @if($listing->user)
+    <p><strong>Posted by:</strong> {{ $listing->user->name }}</p>
+@endif
 
                     <div class="button-container">
                         <button onclick="location.href='/'" class="btn-home">Home</button>
@@ -70,6 +73,16 @@
         </div>
     </section>
     <!-- end of about -->
+
+    <div class="painting">
+        <img src="{{ asset('storage/' . $image) }}" alt="Painting">
+        <div class="info">
+            @if($listing->user)
+                <p><strong>Posted by:</strong> {{ $listing->user->name }}</p>
+            @endif
+            <strong>Uploaded by:</strong> {{ $pic ?? 'Unknown' }}
+        </div>
+    </div>
 
     <!-- Image Modal Script -->
     <script>
