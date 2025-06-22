@@ -28,6 +28,20 @@
                 @if($listing->user)
                     <p class="gallery-show-posted"><strong>Posted by:</strong> {{ $listing->user->name }}</p>
                 @endif
+                @auth
+    @if(auth()->id() === $listing->user_id)
+        <div class="button-container">
+            <button onclick="location.href='/gallery/{{ $listing->id }}/edit'" class="btn-update">Update</button>
+
+            <form action="/gallery/{{ $listing->id }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn-delete">Delete</button>
+            </form>
+        </div>
+    @endif
+@endauth
+
                 <p class="gallery-show-uploaded"><strong>Uploaded by:</strong> {{ $listing->pic ?? 'Unknown' }}</p>
 
                 <div class="gallery-show-btns">

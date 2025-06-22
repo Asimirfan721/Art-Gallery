@@ -63,43 +63,48 @@ public function store(Request $request)
 }
 
     // Show the listing from
-    public function edit(Listing $listing){
-        if($listing){
-            return view('gallery.edit', ['listing'=>$listing]);
-        }else
-            abort(404);
+   // Show edit form
+public function edit(Listing $listing){
+    if ($listing->user_id !== auth()->id()) {
+        abort(403, 'Unauthorized action.');
     }
 
-    //Update the listing form 
-    public function update(Request $request, Listing $listing){
-        $formFilds = $request->validate([
-            'name'=>'required',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'location' => 'required',
-            'tags' => 'required',
-            'description' => 'required'
-        ]);
+    return view('gallery.edit', ['listing' => $listing]);
+}
 
-        if($request->hasFile('logo')){
-            $formFilds['logo'] = $request->file('logo')->store('pictures', 'public');
-        }
-
-        $listing->update($formFilds);
-
-        return back()->with('message', 'Listing updated sucessfully!');
-
+// Update listing
+public function update(Request $request, Listing $listing){
+    if ($listing->user_id !== auth()->id()) {
+        abort(403, 'Unauthorized action.');
     }
 
+    $formFilds = $request->validate([
+        'name'=>'required',
+        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'location' => 'required',
+        'tags' => 'required',
+        'description' => 'required'
+    ]);
 
-    // Delete a gallery listing grom the database  is created  here
-    public function destroy(Listing $listing){
-        if($listing){
-            $listing->delete();
-        }else
-            abort(404,'Listing could not be found!');
-
-        return redirect('/')->with('message', 'Gallery has been deleted sucessfully!');
+    if ($request->hasFile('logo')) {
+        $formFilds['logo'] = $request->file('logo')->store('pictures', 'public');
     }
+
+    $listing->update($formFilds);
+
+    return back()->with('message', 'Listing updated successfully!');
+}
+
+// Delete listing
+public function destroy(Listing $listing){
+    if ($listing->user_id !== auth()->id()) {
+        abort(403, 'Unauthorized action.');
+    }
+
+    $listing->delete();
+
+    return redirect('/')->with('message', 'Gallery has been deleted successfully!');
+}
 
     // update the listing form 
     //Search for the listings in the gallery
