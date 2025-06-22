@@ -2,7 +2,7 @@
     <x-header />
 
     <main class="gallery-create-bg">
-        <div class="gallery-create-card">
+        <div class="gallery-create-card" style="max-width:320px;">
             <h2 class="gallery-create-title">Create Gallery Form</h2>
             <form action="/gallery" method="POST" enctype="multipart/form-data" class="gallery-create-form">
                 @csrf
@@ -66,7 +66,7 @@
             border-radius: 18px;
             box-shadow: 0 6px 32px rgba(60,60,120,0.10);
             padding: 38px 32px 28px 32px;
-            max-width: 430px;
+            max-width: 320px; /* Reduced size */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -137,6 +137,7 @@
         @media (max-width: 500px) {
             .gallery-create-card {
                 padding: 20px 8px 16px 8px;
+                max-width: 98vw;
             }
             .gallery-create-title {
                 font-size: 1.5rem;

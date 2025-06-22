@@ -75,7 +75,8 @@
     <!-- end of about -->
 
     <div class="painting">
-        <img src="{{ asset('storage/' . $image) }}" alt="Painting">
+       <img src="{{ asset('storage/' . $listing->logo) }}" alt="Painting">
+
         <div class="info">
             @if($listing->user)
                 <p><strong>Posted by:</strong> {{ $listing->user->name }}</p>
