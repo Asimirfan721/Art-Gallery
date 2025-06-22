@@ -10,12 +10,20 @@ use App\Models\User; // User model for authentication
 class ListingController extends Controller
 {
     //To display all the gallery listings
-    public function index(){
-        return view('gallery.index', // view has
-        // ['listings'=>Listing::latest()->filter(request(['tag','search']))->paginate(6)
-        ['listings'=>Listing::latest()->paginate(6)
-    ]);
+   public function index(Request $request)
+{
+    $query = Listing::query();
+
+    if ($request->has('search')) {
+        $query->where('name', 'like', '%' . $request->search . '%')
+              ->orWhere('tags', 'like', '%' . $request->search . '%')
+              ->orWhere('location', 'like', '%' . $request->search . '%');
     }
+
+    return view('gallery.index', [
+        'listings' => $query->latest()->paginate(6)
+    ]);
+}
 
     // To display individual listings
     public function show(Listing $listing){

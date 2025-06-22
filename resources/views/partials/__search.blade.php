@@ -1,6 +1,6 @@
-<form action="/" method="POST">
-    <input type = "text" class = "search-input" placeholder="find your gallery . . .">
-    <button type = "submit" class = "search-btn">
-      <i class = "fas fa-search"></i>
+<form action="/" method="GET">
+    <input type="text" name="search" class="search-input" placeholder="Find your gallery . . .">
+    <button type="submit" class="search-btn">
+        <i class="fas fa-search"></i>
     </button>
 </form>
