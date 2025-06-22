@@ -26,7 +26,7 @@
                 <p class="gallery-show-tags"><strong>{{ $listing->tags }}</strong></p>
                 <p class="gallery-show-description">{{ $listing->description }}</p>
                 @if($listing->user)
-                    <p class="gallery-show-posted"><strong>Posted by:</strong> {{ $listing->user->name }}</p>
+                    <p><strong>Uploaded by:</strong> {{ $listing->user->name }}</p>
                 @endif
               @auth
     @if(auth()->id() === $listing->user_id)
@@ -45,8 +45,6 @@
 <div class="gallery-show-btns">
     <button onclick="location.href='/'" class="btn-home">Home</button>
 </div>
-
-                <p class="gallery-show-uploaded"><strong>Uploaded by:</strong> {{ $listing->pic ?? 'Unknown' }}</p>
 
                 <!-- <div class="gallery-show-btns">
                     <button onclick="location.href='/'" class="btn-home">Home</button>
