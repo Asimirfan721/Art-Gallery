@@ -28,9 +28,9 @@
                 @if($listing->user)
                     <p class="gallery-show-posted"><strong>Posted by:</strong> {{ $listing->user->name }}</p>
                 @endif
-                @auth
+              @auth
     @if(auth()->id() === $listing->user_id)
-        <div class="button-container">
+        <div class="gallery-show-btns">
             <button onclick="location.href='/gallery/{{ $listing->id }}/edit'" class="btn-update">Update</button>
 
             <form action="/gallery/{{ $listing->id }}" method="POST" style="display:inline;">
@@ -42,9 +42,13 @@
     @endif
 @endauth
 
+<div class="gallery-show-btns">
+    <button onclick="location.href='/'" class="btn-home">Home</button>
+</div>
+
                 <p class="gallery-show-uploaded"><strong>Uploaded by:</strong> {{ $listing->pic ?? 'Unknown' }}</p>
 
-                <div class="gallery-show-btns">
+                <!-- <div class="gallery-show-btns">
                     <button onclick="location.href='/'" class="btn-home">Home</button>
                     <button onclick="location.href='/gallery/{{ $listing->id }}/edit'" class="btn-update">Update</button>
                     <form action="/gallery/{{ $listing->id }}" method="POST" style="display:inline;">
@@ -52,7 +56,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn-delete">Delete</button>
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
