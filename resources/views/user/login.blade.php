@@ -34,7 +34,7 @@
             flex-direction: column;
             align-items: stretch;
         }
-        h2 {
+        .login-title {
             font-size: 2rem;
             font-weight: 700;
             color: #4f46e5;
@@ -47,17 +47,17 @@
             flex-direction: column;
             gap: 18px;
         }
-        .input-group {
+        .form-group {
             display: flex;
             flex-direction: column;
             gap: 6px;
         }
-        .input-group label {
+        .form-group label {
             font-size: 1rem;
             color: #374151;
             font-weight: 500;
         }
-        .input-group input {
+        .form-group input {
             padding: 10px 12px;
             border: 1px solid #c7d2fe;
             border-radius: 6px;
@@ -65,7 +65,7 @@
             background: #f1f5f9;
             transition: border 0.2s;
         }
-        .input-group input:focus {
+        .form-group input:focus {
             border-color: #6366f1;
             outline: none;
             background: #fff;
@@ -139,12 +139,12 @@
         <!-- Login Form -->
         <form method="POST" action="{{ route('login') }}" class="login-form">
             @csrf
-            <div class="input-group">
+            <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" required>
             </div>
 
-            <div class="input-group">
+            <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" required>
             </div>
